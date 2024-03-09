@@ -24,7 +24,7 @@ const handleClick = async (e) => {
   // console.log(latlong)
   let [lat, long] = latlong
   console.log(lat, long)
-  const response = await fetch("https://foodiebackend-1.onrender.com/api/auth/getlocation", {
+  const response = await fetch("https://localhost:5000/api/auth/getlocation", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ const handleClick = async (e) => {
         const handleSubmit = async(e)=>{
             e.preventDefault();
             console.log(JSON.stringify({name:credentials.name,email:credentials.email,password:credentials.password,location:credentials.geolocation}))
-            const response = await fetch("https://foodiebackend-1.onrender.com/api/auth/createuser",{
+            const response = await fetch("https://localhost:5000/api/auth/createuser",{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'
